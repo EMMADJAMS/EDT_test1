@@ -1,0 +1,26 @@
+<div className="w-full flex justify-end mr-5 my-5 pr-5 lg:hidden">
+                <button onClick={()=>{props.setside(!props.side)}}>
+                    <Image src={'/cross-icon.png'} alt={'close'} width={20} height={20} />
+                </button>
+            </div>
+            <div className="w-3/4 m-auto border border-orange-400 shadow shadow-orange-500 py-3 px-5 lg:hidden">
+                <div className="text-xl text-bold flex justify-center  ">
+                    <h1>explore</h1>
+                </div>
+                <p className='text-sm'>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci consequuntur dignissimos nobis tempora quam! Soluta quidem laborum delectus.
+                </p>
+                <button className="w-full text-center border-orange-400 bg-orange-400 p-0.5 text-blue-950 font-semibold shadow my-3 rounded-full">
+                    <span className={`w-full inline-block rounded-full border border-blue-950`}>login</span>
+                </button>
+            </div>
+            <ul className='flex flex-col justify-center pt-8 lg:w-full'>
+                {NavLink2.map((link)=>{
+                        const isActive = link.route===pathname
+                        return(
+                            <li key={link.route} className={`${link.label==='course'|| link.label==='Universities' ? 'lg:hidden':''} w-full my-3 sm:w-3/4 border-b border-orange-200 flex justify-center sm:mx-auto lg:flex  lg:`}>
+                                {link.label}
+                            </li>
+                        )
+                    })}
+            </ul>
