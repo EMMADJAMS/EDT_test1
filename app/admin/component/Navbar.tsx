@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import link from 'next/link'
 import SideBar from '@/components/SideBar'
+import { UserButton } from '@clerk/nextjs'
 
 const Navbar = () => {
 
@@ -45,9 +46,8 @@ const Navbar = () => {
                     </button>
                 </li>
                 <li className="mx-3">
-                    <button type="button">
-                        Login
-                    </button>
+                <UserButton afterSignOutUrl='/'/>
+
                 </li>
                 <li className="mx-3 lg:hidden">
                     <button type="button" onClick={handleSidebar}>

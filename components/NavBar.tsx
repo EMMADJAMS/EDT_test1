@@ -6,6 +6,7 @@ import { NavLink1 } from '@/constant'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import link from 'next/link'
+import { UserButton } from '@clerk/nextjs'
 
 const NavBar = () => {
     const [sideState,setsideState]= useState(false)
@@ -50,7 +51,7 @@ const NavBar = () => {
                 </li>
                 <li className="mx-3">
                     <button type="button">
-                        Login
+                    <UserButton afterSignOutUrl='/'/>
                     </button>
                 </li>
                 <li className="mx-3 lg:hidden">
